@@ -1,1 +1,11 @@
-{{item.name + ": " + item.price}}
+<h2>{{ title }}</h2>
+
+<ul class="items">
+    <li *ngFor="let item of items"
+        [class.selected]="item === selectedItem" 
+        (click)="onSelect(item)">
+        <span class="badge">{{item.id}}</span> {{item.name}}: {{item.price}} 
+    </li>
+</ul>
+
+<app-item-detail [item]="selectedItem"></app-item-detail>
