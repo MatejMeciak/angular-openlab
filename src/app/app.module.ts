@@ -7,6 +7,8 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -15,11 +17,13 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
     HeroDetailComponent,
     ItemsComponent,
     MessagesComponent,
-    ItemDetailComponent
+    ItemDetailComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [
 
