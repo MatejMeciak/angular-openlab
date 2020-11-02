@@ -1,1 +1,8 @@
-<app-item-detail [items]="selectedItem"></app-item-detail>
+<h2>Hero Items</h2>
+<ul class="items">
+    <li *ngFor="let item of items">
+      <a *ngIf="item.isAvailable" routerLink="/item/{{item.id}}">
+        <span class="badge">{{item.id}}</span> {{item.name}}<br>
+      </a>
+    </li>
+  </ul>

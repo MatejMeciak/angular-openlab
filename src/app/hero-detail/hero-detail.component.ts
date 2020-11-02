@@ -17,10 +17,14 @@ export class HeroDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
-
   ) {}
+
   ngOnInit(): void {
     this.getHero();
+  }
+
+  click(): void {
+    
   }
   
   getHero(): void {

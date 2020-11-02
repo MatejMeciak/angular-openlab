@@ -5,6 +5,8 @@
       <label>name:
         <input [(ngModel)]="hero.name" placeholder="name"/>
       </label>
-    </div>
-  </div>
-  <app-item-detail [items]="hero.items"></app-item-detail>
+    </div><br>
+    <button (click)="click()"><a routerLink="/buymenu/{{hero.id}}">Kupit item</a></button>
+</div>
+
+<app-item-detail [items]="hero.items"></app-item-detail>

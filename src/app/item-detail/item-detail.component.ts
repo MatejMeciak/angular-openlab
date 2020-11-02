@@ -1,3 +1,5 @@
+import { ActivatedRoute } from '@angular/router';
+import { ItemService } from './../item.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Item } from '../item';
 
@@ -8,11 +10,21 @@ import { Item } from '../item';
 })
 export class ItemDetailComponent implements OnInit {
 
-  @Input() items: Item;
+  item: Item;
 
-  constructor() { }
+  @Input() items: Item[];
+
+  constructor(private route: ActivatedRoute,private itemService:ItemService) { }
 
   ngOnInit(): void {
+    this.getItem();
   }
 
+  getItem(): void{
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.itemService.getItem(id)
+      .subscribe(item => this.item = item);
+  }
 }
+
+

@@ -1,4 +1,4 @@
-
+import { ItemService } from '../item.service';
 import { Component, OnInit } from '@angular/core';
 import { Item } from '../item'
 
@@ -8,13 +8,19 @@ import { Item } from '../item'
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
-  title = 'Items';
-
   selectedItem: Item;
 
-  constructor() { }
+  items: Item[];
+
+  constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
+    this.getItems();
+  }
+
+  getItems(): void {
+    this.itemService.getItems()
+        .subscribe(items => this.items = items);
   }
 
 }
