@@ -14,7 +14,6 @@ export class BuymenuComponent implements OnInit {
 
   items: Item[];
   hero: Hero;
-  heroMoney: number;
 
   constructor(private itemService: ItemService, private route: ActivatedRoute,
     private heroService: HeroService) { }
@@ -33,12 +32,11 @@ export class BuymenuComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.heroService.getHero(id)
       .subscribe(hero => this.hero = hero);
-    this.heroMoney = this.hero.money;
   }
 
   buyItem(item: Item): void {
-    if (this.heroMoney > item.price){
-      this.heroMoney -= item.price;
+    if (this.hero.money > item.price){
+      this.hero.money -= item.price;
       item.isAvailable = false;
       this.hero.items.push(item);
     }
