@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { ClickerComponent } from './clicker/clicker.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     ItemDetailComponent,
     DashboardComponent,
     BuymenuComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    ClickerComponent
   ],
   imports: [
     BrowserModule,

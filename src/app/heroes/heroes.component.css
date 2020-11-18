@@ -20,7 +20,7 @@
   left: .1em;
 }
 
-.heroes a {
+.heroes a.route {
   color: #333;
   text-decoration: none;
   position: relative;
@@ -57,6 +57,7 @@ button {
   cursor: pointer;
   cursor: hand;
   font-family: Arial;
+  margin: 2px;
 }
 
 button:hover {
@@ -65,8 +66,10 @@ button:hover {
 
 button.delete {
   position: relative;
-  left: 194px;
-  top: -32px;
+  left: 144px;
+  top: -35px;
   background-color: gray !important;
   color: white;
 }
+
+
