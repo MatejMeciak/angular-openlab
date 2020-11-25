@@ -1,25 +1,45 @@
-<div class="heroes-content">
-<h2>My Heroes</h2>
-
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a class="route" routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </a>
-    <button class="delete"><a routerLink="/clicker/{{hero.id}}">Job</a></button>
-    <button class="delete" title="delete hero"
-    (click)="delete(hero)">x</button>
-  </li>
-</ul>
+<div class="border-container">
+<h2 class="title" style="color:#c94d4d;">My Heroes</h2>
+  <div class="tab">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Money</th>
+          <th scope="col">Life</th>
+          <th scope="col">Strength</th>
+          <th scope="col"></th>
+          <th scope="col">
+            <app-dropdown [(sortBy)]="sortBy"></app-dropdown>
+          </th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}">
+        <tr>
+          <th scope="row">{{hero.id}}</th>
+          <td>{{hero.name}}</td>
+          <td>{{hero.money}}</td>
+          <td>{{hero.life}}</td>
+          <td>{{hero.strength}}</td>
+          <td class="button-center"><button class="btn btn-secondary" title="delete hero"
+            (click)="delete(hero)">Delete</button></td>
+          <td></td>
+        </tr>  
+      </tbody>
+    </table>
+  </div> 
 </div>
-<button (click)="goBack()">go back</button>
 
-<div>
-  <h2>Add Hero</h2>
-  <label>Hero name:
+
+<div class="border-container">
+  <h2 class="title">Add Hero</h2>
+  <label><strong>Hero Name:</strong>
     <input #heroName />
   </label>
-  <button (click)="add(heroName.value); heroName.value=''">
+  <button class="btn-small btn-secondary" (click)="add(heroName.value); heroName.value=''">
     add
   </button>
 </div>
+
+

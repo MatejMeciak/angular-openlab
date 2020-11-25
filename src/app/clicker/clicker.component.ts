@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClickerComponent implements OnInit {
 
+  money: number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  click(){
+    this.money++;
   }
 
 }

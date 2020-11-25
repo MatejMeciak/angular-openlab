@@ -14,7 +14,6 @@ const routes: Routes = [
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'items', component: ItemsComponent },
-  { path: 'item/:id', component: ItemDetailComponent },
   { path: 'buymenu/:id', component: BuymenuComponent },
   { path: 'clicker/:id', component: ClickerComponent },
 ];

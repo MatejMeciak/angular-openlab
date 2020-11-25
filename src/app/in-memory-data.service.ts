@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Hero } from './hero';
 
 @Injectable({
   providedIn: 'root',
@@ -8,26 +7,29 @@ import { Hero } from './hero';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const heroes = [
-      { id: 11, name: 'Dr Nice', money: 100, items: [] },
-      { id: 12, name: 'Narco', money: 100, items: [] },
-      { id: 13, name: 'Bombasto', money: 100, items: [] },
-      { id: 14, name: 'Celeritas', money: 100, items: [] },
-      { id: 15, name: 'Magneta', money: 100, items: [] },
-      { id: 16, name: 'RubberMan', money: 100, items: [] },
-      { id: 17, name: 'Dynama', money: 100, items: [] },
-      { id: 18, name: 'Dr IQ', money: 100, items: [] },
-      { id: 19, name: 'Magma', money: 100, items: [] },
-      { id: 20, name: 'Tornado', money: 100, items: [] },
+      { id: 1, name: 'Dr Nice', money: 50, items: [], life: 10, strength: 4 },
+      { id: 2, name: 'Marco', money: 100, items: [], life: 9, strength: 3 },
+      { id: 3, name: 'Bombasto', money: 10, items: [], life: 10, strength: 1 },
+      { id: 4, name: 'Celeritas', money: 0, items: [], life: 4, strength: 5 },
+      { id: 5, name: 'Magneta', money: 0, items: [], life: 10, strength: 3 },
+      { id: 6, name: 'RubberMan', money: 0, items: [], life: 7, strength: 4 },
+      { id: 7, name: 'Dynama', money: 0, items: [], life: 10, strength: 7 },
+      { id: 8, name: 'Dr IQ', money: 0, items: [], life: 4, strength: 3 },
+      { id: 9, name: 'Magma', money: 0, items: [], life: 5, strength: 7 },
+      { id: 10, name: 'Tornado', money: 0, items: [], life: 10, strength: 9 },
     ];
-    return {heroes};
+    const items = [
+      { id: 1, name: "Sword", price: 34, amount: 5 },
+      { id: 2, name: "Shield", price: 53, amount: 5 },
+      { id: 3, name: "Helmet", price: 24, amount: 5 },
+      { id: 4, name: "Boots", price: 28, amount: 5 },
+      { id: 5, name: "Ring", price: 16, amount: 5 },
+    ];
+
+    return {heroes, items};
   }
 
-  // Overrides the genId method to ensure that a hero always has an id.
-  // If the heroes array is empty,
-  // the method below returns the initial number (11).
-  // if the heroes array is not empty, the method below returns the highest
-  // hero id + 1.
-  genId(heroes: Hero[]): number {
-    return heroes.length > 0 ? Math.max(...heroes.map(hero => hero.id)) + 1 : 11;
+  genId(object: any[]): number {
+    return object.length > 0 ? Math.max(...object.map(obj => obj.id)) + 1 : 1;
   }
 }

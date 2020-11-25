@@ -37,7 +37,6 @@ export class BuymenuComponent implements OnInit {
   buyItem(item: Item): void {
     if (this.hero.money > item.price){
       this.hero.money -= item.price;
-      item.isAvailable = false;
       this.hero.items.push(item);
     }
   }

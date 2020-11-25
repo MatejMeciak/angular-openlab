@@ -1,0 +1,8 @@
+<div class="dropd" (click)="dropdown()">
+    <p>{{sortBy}}</p>
+</div>
+<div class="shadow">
+    <div class="items" *ngFor="let sortProp of sortProperties" [style.display]="display ? 'block': 'none'">
+        <p (click)='select(sortProp)'>{{sortProp}}</p>
+    </div>
+</div>

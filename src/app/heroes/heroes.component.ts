@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
-import { Location } from '@angular/common';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
@@ -14,22 +13,37 @@ export class HeroesComponent implements OnInit {
     
   selectedHero: Hero;
 
+  private _sortBy: string = 'id';
+
+  get sortBy(): string {
+      return this._sortBy;
+  }
+  set sortBy(value: string) {
+      this._sortBy = value;
+  }
+
   heroes: Hero[];
 
-  constructor(private location: Location, private heroService: HeroService) { }
+  constructor(private heroService: HeroService) { }
 
   ngOnInit() {
     this.getHeroes();
   }
   
-  goBack(): void {
-    this.location.back();
-
+  getHeroes(): void {
+      this.heroService.getHeroes()
+        .subscribe(heroes => this.heroes = heroes
+          .sort((a,b) => {
+            if(this.sortBy === 'id') return (a[this.sortBy] > b[this.sortBy] ? 1 : -1)
+            else return (a[this.sortBy] < b[this.sortBy] ? 1 : -1)
+          }));
   }
+
+
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }
-    this.heroService.addHero({ name } as Hero)
+    this.heroService.addHero({ name, money:0, items: [], life: 8, strength: 5 })
       .subscribe(hero => {
         this.heroes.push(hero);
       });
@@ -38,10 +52,5 @@ export class HeroesComponent implements OnInit {
   delete(hero: Hero): void {
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero).subscribe();
-  }
-
-  getHeroes(): void {
-      this.heroService.getHeroes()
-        .subscribe(heroes => this.heroes = heroes);
   }
 }

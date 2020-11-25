@@ -18,6 +18,11 @@ export class ItemsComponent implements OnInit {
     this.getItems();
   }
 
+  displayItemDetail(item: Item): void {
+    this.selectedItem = item; 
+  }
+
+
   getItems(): void {
     this.itemService.getItems()
         .subscribe(items => this.items = items);

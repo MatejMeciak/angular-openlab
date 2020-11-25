@@ -10,21 +10,13 @@ import { Item } from '../item';
 })
 export class ItemDetailComponent implements OnInit {
 
-  item: Item;
+  @Input() item: Item;
 
-  @Input() items: Item[];
-
-  constructor(private route: ActivatedRoute,private itemService:ItemService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getItem();
   }
 
-  getItem(): void{
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.itemService.getItem(id)
-      .subscribe(item => this.item = item);
-  }
 }
 
 

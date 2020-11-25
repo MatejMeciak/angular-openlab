@@ -1,21 +1,10 @@
 <h2>Item Details</h2>
-<div *ngIf="items && items.length > 0; else elseBlock">
+<div *ngIf="item">
   <ul class="items">
-    <li *ngFor="let item of items">
-        <span class="badge">{{item.id}}</span>
-        {{item.name}}
-        <div><span>price: </span>{{item.price}}</div>
+    <li>
+        <div><strong>Name: </strong>{{item.name}}</div>
+        <div><strong>Price: </strong>{{item.price}}</div>
+        <div><strong>Amount: </strong>{{item.amount}}</div>
     </li>
   </ul>  
 </div>
-<ng-template #elseBlock>
-  <div *ngIf="item; else elseB">
-  <div><span>id: </span>{{item.id}}</div>
-    <div>
-      <label>name: {{ item.name }}
-      </label>
-    </div>
-  </div>
-</ng-template>
-<ng-template #elseB>This hero has no item.</ng-template>
-

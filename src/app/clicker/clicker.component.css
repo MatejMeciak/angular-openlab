@@ -1,4 +1,20 @@
 img {
+    max-width: 300px;
+    max-height: 300px;
     height: 300px;
     width: 300px;
+    user-select: none;
+    margin-top: 2em;
+}
+img:active {
+    position: absolute;
+    top: -1px;
+    left: 235px;
+}
+.text-center {
+    position: relative;
+}
+
+span {
+    display: block;
 }
