@@ -4,3 +4,7 @@ ul {
 li {
   display: block;
 }
+P {
+  margin-top: 1.3em;
+  width: 50%;
+}

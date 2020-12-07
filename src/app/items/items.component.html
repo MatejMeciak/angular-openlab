@@ -1,5 +1,5 @@
 <div class="border-container">
-  <h2 class="title" >Items</h2>
+  <h2 class="title">Items</h2>
   <div class="list-group">
     <ul>
       <li *ngFor="let item of items" (click)="displayItemDetail(item)" [style.display]="item.amount < 1 ? 'none' : 'block'">

@@ -17,6 +17,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { ClickerComponent } from './clicker/clicker.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { HeroFormComponent } from './hero-form/hero-form.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { DropdownComponent } from './dropdown/dropdown.component';
     HeroSearchComponent,
     ClickerComponent,
     NavigationBarComponent,
-    DropdownComponent
+    DropdownComponent,
+    HeroFormComponent
   ],
   imports: [
     BrowserModule,

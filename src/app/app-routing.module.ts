@@ -1,5 +1,5 @@
+import { HeroFormComponent } from './hero-form/hero-form.component';
 import { BuymenuComponent } from './buymenu/buymenu.component';
-import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { ItemsComponent } from './items/items.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'items', component: ItemsComponent },
   { path: 'buymenu/:id', component: BuymenuComponent },
   { path: 'clicker/:id', component: ClickerComponent },
+  { path: 'hero-form', component: HeroFormComponent },
 ];
 
 @NgModule({

@@ -31,6 +31,7 @@ th {
     border-right: 1px solid lightgray;
     z-index: 10;
     font-weight: 130;
+    user-select: none;
 }
 
 .items:last-child {

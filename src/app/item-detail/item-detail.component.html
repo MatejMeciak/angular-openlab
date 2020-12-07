@@ -1,10 +1,6 @@
 <h2>Item Details</h2>
 <div *ngIf="item">
-  <ul class="items">
-    <li>
-        <div><strong>Name: </strong>{{item.name}}</div>
-        <div><strong>Price: </strong>{{item.price}}</div>
-        <div><strong>Amount: </strong>{{item.amount}}</div>
-    </li>
-  </ul>  
+  <p>This is the <strong>{{item.name}}</strong> and it costs 
+    <strong>{{item.price}}</strong> and it gives you <strong>{{ item.life }} life</strong> and 
+     <strong>{{ item.strength }} strength</strong> additional. We have only <strong>{{item.amount}}</strong> of them.</p>
 </div>
