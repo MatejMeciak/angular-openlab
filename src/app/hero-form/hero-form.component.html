@@ -1,14 +1,13 @@
-{{diagnostic}}
-<div class="container">
+<div class="border-container">
   <h1>Hero Form</h1>
-  <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+  <form #heroForm="ngForm">
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" id="name"
                required maxlength="20"
                [class.is-invalid]="name.invalid && name.touched"
                [(ngModel)]="model.name" name="name" #name="ngModel">
-        <div [hidden]="name.valid || name.pristine"
+        <div [hidden]="name.valid || name.pristine || name.untouched"
              class="alert alert-danger">
           Name is required
         </div>
@@ -16,7 +15,7 @@
 
       <div class="form-group">
         <label for="life">Life</label>
-        <input type="number" class="form-control" 
+        <input type="text" class="form-control" 
                required pattern="^$|^([0-9]|[0]|[1][0])?"
                [class.is-invalid]="life.invalid && life.touched"
                name="life" [(ngModel)]="model.life" #life="ngModel">
@@ -28,7 +27,7 @@
 
       <div class="form-group">
         <label for="money">Money</label>
-        <input type="number" class="form-control" 
+        <input type="text" class="form-control" 
                required
                name="money" [(ngModel)]="model.money">
       </div>
@@ -45,6 +44,6 @@
           </div>
       </div>
 
-      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+      <button type="submit" (click)="onSubmit()" class="btn btn-success" [disabled]="!heroForm.form.valid" routerLink="/heroes">Submit</button>
   </form>
 </div>

@@ -1,6 +1,8 @@
+import { HeroService } from './../hero.service';
 import { Component } from '@angular/core';
 
 import { Hero } from '../hero';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-hero-form',
@@ -9,15 +11,16 @@ import { Hero } from '../hero';
 })
 export class HeroFormComponent {
 
+  constructor(private heroService:HeroService){
+
+  }
+
   model = new Hero('', 0, 0, 0);
 
   powers = ['Really Smart', 'Super Flexible',
             'Super Hot', 'Weather Changer'];
 
-  submitted = false;
-
-  onSubmit() { this.submitted = true; }
-
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
+  onSubmit():void {
+      this.heroService.addHero(this.model).subscribe();
+   }
 }
