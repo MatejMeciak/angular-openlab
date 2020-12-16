@@ -32,13 +32,13 @@ export class BuymenuComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.heroService.getHero(id)
       .subscribe(hero => this.hero = hero);
+      
   }
 
   buyItem(item: Item): void {
-    if (this.hero.money > item.price){
       this.hero.money -= item.price;
       this.hero.items.push(item);
-    }
+      this.heroService.updateHero(this.hero).subscribe();
   }
 
 }

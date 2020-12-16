@@ -27,16 +27,20 @@
   .search-result li a:active {
     color: white;
   }
-  #search-box {
-    width: 200px;
-    height: 20px;
-  }
-  
   
   ul.search-result {
     margin-top: 0;
     padding-left: 0;
+    width: 50%;
   }
   h4 {
     margin-top: 10px;
+  }
+  .input {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .input {
+    width: 200px;
   }

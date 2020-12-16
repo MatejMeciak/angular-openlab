@@ -1,13 +1,13 @@
-<div *ngIf="hero">
+<div class="border-container" *ngIf="hero">
   <h2>{{hero.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{hero.id}}</div>
+    <div class="id"><span>id: </span>{{hero.id}}</div>
     <div>
       <label>name:
         <input [(ngModel)]="hero.name" placeholder="name"/>
       </label>
       <button (click)="save()">save</button>
     </div><br>
+    <p>Hero items: <span *ngFor="let item of hero.items" class="comma">{{item.name}}</span></p>
     <button (click)="click()"><a routerLink="/buymenu/{{hero.id}}">Kupit item</a></button>
 </div>
 
-<app-item-detail></app-item-detail>

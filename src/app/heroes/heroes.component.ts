@@ -34,7 +34,7 @@ export class HeroesComponent implements OnInit {
       this.heroService.getHeroes()
         .subscribe(heroes => this.heroes = heroes
           .sort((a,b) => {
-            if(this.sortBy === 'id') return (a[this.sortBy] > b[this.sortBy] ? 1 : -1)
+            if(this.sortBy === 'id' || this.sortBy === 'name') return (a[this.sortBy] > b[this.sortBy] ? 1 : -1)
             else return (a[this.sortBy] < b[this.sortBy] ? 1 : -1)
           }));
   }
