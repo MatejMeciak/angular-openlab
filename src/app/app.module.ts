@@ -1,3 +1,5 @@
+import { LoginFormComponent } from './login-form/login-form.component';
+import { MaterialModule } from './material.module';
 import { ItemsComponent } from './items/items.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -14,11 +16,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
-import { ClickerComponent } from './clicker/clicker.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
-
+import { ItemFormComponent } from './item-form/item-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -31,12 +33,14 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
     DashboardComponent,
     BuymenuComponent,
     HeroSearchComponent,
-    ClickerComponent,
     NavigationBarComponent,
     DropdownComponent,
-    HeroFormComponent
+    HeroFormComponent,
+    ItemFormComponent,
+    LoginFormComponent
   ],
   imports: [
+    MaterialModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,
@@ -48,7 +52,9 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-)
+),
+
+    BrowserAnimationsModule
 
 
   ],

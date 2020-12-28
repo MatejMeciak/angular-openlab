@@ -17,9 +17,6 @@ export class HeroFormComponent {
 
   model = new Hero('', 0, 0, 0);
 
-  powers = ['Really Smart', 'Super Flexible',
-            'Super Hot', 'Weather Changer'];
-
   onSubmit():void {
       this.heroService.addHero(this.model).subscribe();
    }

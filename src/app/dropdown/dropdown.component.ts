@@ -30,7 +30,7 @@ export class DropdownComponent implements OnInit {
 
   dropdown(): void {
     if (this.display) this.display = false;
-    else this.display = true
+    else this.display = true;
   }
 
   select(sortBy: string): void {

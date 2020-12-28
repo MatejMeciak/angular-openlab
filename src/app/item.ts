@@ -1,10 +1,14 @@
-import { NumberValueAccessor } from '@angular/forms';
-
-export interface Item {
-    id: number;
+export class Item {
+    id?: number;
     name: string;
     price: number;
     strength: number;
     life: number;
-    amount: number;
+
+    constructor(name: string, price: number, life: number, strength: number) {
+        this.name = name;
+        this.price = price;
+        this.life = life;
+        this.strength = strength;
+    }
 }

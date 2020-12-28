@@ -2,12 +2,15 @@
   <h2 class="title">Items</h2>
   <div class="list-group">
     <ul>
-      <li *ngFor="let item of items" (click)="displayItemDetail(item)" [style.display]="item.amount < 1 ? 'none' : 'block'">
-        <a *ngIf="item.amount > 0" class="list-group-item list-group-item-action list-group-item-dark">
+      <li *ngFor="let item of items" (click)="displayItemDetail(item)">
+        <a class="list-group-item list-group-item-action list-group-item-dark">
           <span class="id">{{item.id}}</span><span>{{item.name}}</span>
         </a>
       </li>
     </ul>
     <app-item-detail [item]="selectedItem"></app-item-detail>
+  </div>
+  <div class="create">
+    <a routerLink="/item-form">Create a Item</a> 
   </div>
 </div>

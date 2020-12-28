@@ -19,11 +19,11 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 10, name: 'Tornado', money: 0, items: [], life: 10, strength: 9 },
     ];
     const items = [
-      { id: 1, name: "Sword of Mastery", price: 34, amount: 5, life: 2, strength: 6 },
-      { id: 2, name: "Shield", price: 53, amount: 5, life: 4, strength: 4 },
-      { id: 3, name: "Soldier's Helmet", price: 24, amount: 5, life: 7, strength: 2 },
-      { id: 4, name: "Chain Vest", price: 28, amount: 5, life: 5, strength: 3 },
-      { id: 5, name: "Doran's Ring", price: 16, amount: 5, life: 5, strength: 5 },
+      { id: 1, name: "Sword of Mastery", price: 34, life: 2, strength: 6 },
+      { id: 2, name: "Shield", price: 53,  life: 4, strength: 4 },
+      { id: 3, name: "Soldier's Helmet", price: 24, life: 7, strength: 2 },
+      { id: 4, name: "Chain Vest", price: 28,  life: 5, strength: 3 },
+      { id: 5, name: "Doran's Ring", price: 16,  life: 5, strength: 5 },
     ];
 
     return {heroes, items};
