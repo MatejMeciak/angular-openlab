@@ -23,14 +23,14 @@
           <td>{{hero.life}}</td>
           <td>{{hero.strength}}</td>
           <td class="button-center"><button class="btn btn-secondary" title="delete hero"
-            (click)="delete(hero)">Delete</button></td>
+            (click)="delete(hero)" *ngIf="hide">Delete</button></td>
           <td></td>
         </tr>  
       </tbody>
     </table>
   </div>
   <div class="create">
-    <a routerLink="/hero-form">Create a Hero</a> 
+    <a *ngIf="hide" routerLink="/hero-form">Create a Hero</a> 
   </div>
 </div>
 

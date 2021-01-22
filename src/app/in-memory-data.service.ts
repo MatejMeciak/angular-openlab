@@ -25,8 +25,11 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 4, name: "Chain Vest", price: 28,  life: 5, strength: 3 },
       { id: 5, name: "Doran's Ring", price: 16,  life: 5, strength: 5 },
     ];
+    const users = [
+      { id: 0, username: 'admin', password: 'admin', isAdmin: true}
+    ];
 
-    return {heroes, items};
+    return {heroes, items, users};
   }
 
   genId(object: any[]): number {

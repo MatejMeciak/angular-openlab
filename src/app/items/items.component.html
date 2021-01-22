@@ -11,6 +11,6 @@
     <app-item-detail [item]="selectedItem"></app-item-detail>
   </div>
   <div class="create">
-    <a routerLink="/item-form">Create a Item</a> 
+    <a *ngIf="hide" routerLink="/item-form">Create a Item</a> 
   </div>
 </div>

@@ -1,9 +1,12 @@
+import { UserService } from './user.service';
+import { ItemService } from './item.service';
+import { HeroService } from './hero.service';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { MaterialModule } from './material.module';
 import { ItemsComponent } from './items/items.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
@@ -21,6 +24,7 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import { ItemFormComponent } from './item-form/item-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterFormComponent } from './register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -37,12 +41,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DropdownComponent,
     HeroFormComponent,
     ItemFormComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    RegisterFormComponent
   ],
   imports: [
     MaterialModule,
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientModule,
@@ -53,13 +59,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
 ),
-
-    BrowserAnimationsModule
-
-
+    BrowserAnimationsModule,
   ],
   providers: [
-
+    HeroService,
+    ItemService,
+    UserService
   ],
   bootstrap: [ AppComponent ]
 })

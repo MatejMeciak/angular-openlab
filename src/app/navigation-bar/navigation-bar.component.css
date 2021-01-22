@@ -6,8 +6,9 @@ header {
   }
 
 h1 {
+  margin : 0 auto;
   margin-left: 8px;
-  margin-bottom: 20px;
+  padding-top: 12px;
 }
 
 .nav ul {
@@ -26,5 +27,10 @@ h1 {
 }
 .nav li:last-child {
   margin-right: 8px;
+}
+
+mat-icon {
+  outline: none;
+  border: none !important;
 }
   

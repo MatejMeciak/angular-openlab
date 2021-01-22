@@ -1,9 +1,9 @@
+import { UserService } from './../user.service';
+import { NavigationBarComponent } from './../navigation-bar/navigation-bar.component';
 import { Component, Input, OnInit } from '@angular/core';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
-import { MessageService } from '../message.service';
-
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
@@ -12,6 +12,8 @@ import { MessageService } from '../message.service';
 export class HeroesComponent implements OnInit {
     
   selectedHero: Hero;
+
+  hide:boolean = false;
 
   private _sortBy: string = 'id';
 
@@ -24,10 +26,13 @@ export class HeroesComponent implements OnInit {
 
   heroes: Hero[];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService, private userService:UserService) { }
 
   ngOnInit() {
-    this.getHeroes();
+    if (this.userService.isLogged){
+      this.hide = this.userService.loggedUser.isAdmin;
+    }
+    this.getHeroes(); 
   }
   
   getHeroes(): void {

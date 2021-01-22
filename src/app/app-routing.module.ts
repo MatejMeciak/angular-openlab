@@ -1,3 +1,4 @@
+import { LoginFormComponent } from './login-form/login-form.component';
 import { ItemFormComponent } from './item-form/item-form.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import { BuymenuComponent } from './buymenu/buymenu.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'buymenu/:id', component: BuymenuComponent },
   { path: 'hero-form', component: HeroFormComponent },
   { path: 'item-form', component: ItemFormComponent },
+  { path: 'login', component: LoginFormComponent },
 ];
 
 @NgModule({
